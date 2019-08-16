@@ -1,11 +1,13 @@
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
 import { CommentQuery } from "./queries/comment";
+import { UserQuery } from "./queries/user";
 
 class Query {
   public name = "CommentsRootQuery";
   public fields = function() {
     return {
-      comment: new CommentQuery()
+      comment: new CommentQuery(),
+      user: new UserQuery()
     };
   };
 }
