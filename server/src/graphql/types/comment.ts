@@ -4,6 +4,8 @@ import {
   GraphQLString,
   GraphQLObjectType
 } from "graphql";
+import { getUserById } from "../queries/user";
+import { UserType } from "./user";
 
 export class Comment {
   public name: string = "Comment";
@@ -21,6 +23,10 @@ export class Comment {
       },
       lastModifiedDate: {
         type: GraphQLString
+      },
+      user: {
+        type: UserType,
+        resolve: (parent: any) => getUserById(parent.userId)
       }
     };
   };

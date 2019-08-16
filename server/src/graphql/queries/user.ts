@@ -12,6 +12,10 @@ export class UserQuery implements GraphQLQuery {
     }
   };
   public resolve = function(parent: any, args: any) {
-    return dummyUsers.filter(user => user.id == args.id).pop();
+    return getUserById(args.id);
   };
+}
+
+export function getUserById(id: string) {
+  return dummyUsers.filter(user => user.id == id).pop();
 }
