@@ -1,6 +1,6 @@
 import { GraphQLID } from "graphql";
 import { dummyComments } from "../data/dummy-data";
-import { CommentType } from "../types/Comment";
+import { CommentType } from "../types/comment";
 import { GraphQLQuery } from "./abstract-query";
 
 export class CommentQuery implements GraphQLQuery {
@@ -14,4 +14,8 @@ export class CommentQuery implements GraphQLQuery {
   public resolve = function(parent: any, args: any) {
     return dummyComments.filter(comment => comment.id == args.id).pop();
   };
+}
+
+export function getCommentsByUserId(id: string) {
+  return dummyComments.filter(comment => comment.userId == id);
 }

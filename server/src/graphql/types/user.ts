@@ -3,13 +3,16 @@ import {
   GraphQLID,
   GraphQLString,
   GraphQLObjectType,
-  GraphQLBoolean
+  GraphQLBoolean,
+  GraphQLList
 } from "graphql";
+import { getCommentsByUserId } from "../queries/comment";
+import { CommentType } from "./comment";
 
 export class User {
   public name: string = "User";
   public description: string = "This represents a user";
-  public fields = function() {
+  public fields = function(): any {
     return {
       id: {
         type: new GraphQLNonNull(GraphQLID)
@@ -22,6 +25,10 @@ export class User {
       },
       active: {
         type: GraphQLBoolean
+      },
+      comments: {
+        type: new GraphQLList(CommentType),
+        resolve: (parent: any) => getCommentsByUserId(parent.id)
       }
     };
   };
