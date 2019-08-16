@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "strict": true,
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "pretty": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "outDir": "./dist",
+    "lib": [
+      "dom",
+      "es7"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

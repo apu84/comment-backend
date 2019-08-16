@@ -1,0 +1,47 @@
+{
+  "name": "comment-backend-server",
+  "version": "1.0.0",
+  "description": "Backend server for generic commenting app",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write \"**/*.{js,ts}\"",
+    "lint": "tslint --project .",
+    "precompile": "npm run prettier && npm run lint",
+    "compile": "tsc",
+    "build": "npm run compile",
+    "start": "node dist/index.js",
+    "dist": "rimraf dist/* && gulp build-artifact"
+  },
+  "author": "apu",
+  "license": "MIT",
+  "dependencies": {
+    "continuation-local-storage": "^3.2.1",
+    "cors": "~2.7.1",
+    "express": "^4.16.4",
+    "js-yaml": "~3.6.1",
+    "libxmljs": "0.19.5",
+    "lodash": "^4.17.11",
+    "request": "^2.88.0",
+    "typescript": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.0",
+    "@types/js-yaml": "^3.11.2",
+    "@types/libxmljs": "0.18.3",
+    "@types/node": "^10.12.1",
+    "@types/request": "^2.48.0",
+    "@types/continuation-local-storage": "^3.2.1",
+    "@types/lodash": "^4.14.123",
+    "casual": "^1.5.19",
+    "copyfiles": "^2.1.0",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "gulp": "^3.9.1",
+    "gulp-zip": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ignore": "^2.0.2"
+  }
+}
